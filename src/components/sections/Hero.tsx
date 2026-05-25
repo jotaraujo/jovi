@@ -17,12 +17,13 @@ const stagger = {
 function StrawHat() {
   return (
     <div
-      className="hat-float absolute top-8 right-8 md:top-12 md:right-16 pointer-events-none"
+      className="hat-float absolute top-4 right-3 sm:top-8 sm:right-8 md:top-12 md:right-16 pointer-events-none"
       aria-hidden="true"
     >
       <svg
-        width="120"
-        height="90"
+        width="80"
+        height="60"
+        className="sm:w-[120px] sm:h-[90px]"
         viewBox="0 0 120 90"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +118,7 @@ export default function Hero() {
 
         {/* Custom Audio Player */}
         <div 
-          className="w-full max-w-sm p-4 border-[2px] border-gold rounded-sm flex items-center gap-4 shadow-[6px_6px_0px_rgba(184,136,42,0.15)] relative overflow-hidden" 
+          className="w-full p-3 sm:p-4 border-[2px] border-gold rounded-sm flex items-center gap-3 sm:gap-4 shadow-[6px_6px_0px_rgba(184,136,42,0.15)] relative overflow-hidden" 
           style={{ backgroundColor: '#FAF3E0' }}
         >
           <button 
@@ -158,7 +159,7 @@ export default function Hero() {
         <motion.button
           variants={fadeInUp}
           onClick={scrollDown}
-          className="mt-2 px-8 py-3 border-2 border-drama text-drama font-serif text-lg rounded-sm
+          className="mt-2 px-5 sm:px-8 py-2.5 sm:py-3 border-2 border-drama text-drama font-serif text-base sm:text-lg rounded-sm
             hover:bg-drama hover:text-cream transition-all duration-300
             shadow-[0_2px_8px_rgba(44,26,14,0.1)] hover:shadow-[0_4px_16px_rgba(125,26,46,0.25)]"
           aria-label="Descer para ver a jornada"

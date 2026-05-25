@@ -54,7 +54,7 @@ export default function Timeline() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-display font-bold text-drama text-4xl md:text-5xl"
+          className="font-display font-bold text-drama text-3xl sm:text-4xl md:text-5xl"
         >
           O Log Pose
         </motion.h2>
@@ -101,7 +101,7 @@ export default function Timeline() {
           className="relative flex mb-8"
         >
           <div className="hidden md:block w-1/2" />
-          <div className="w-full md:w-1/2 md:pl-12 pl-8">
+          <div className="w-full md:w-1/2 md:pl-12 pl-6">
             <div
               className="p-6 rounded-sm"
               style={{

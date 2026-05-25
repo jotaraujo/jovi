@@ -24,8 +24,7 @@ export default function PostcardCard({
 
   return (
     <div
-      className={`postcard-flip cursor-pointer ${flipped ? 'flipped' : ''}`}
-      style={{ height: '280px' }}
+      className={`postcard-flip cursor-pointer ${flipped ? 'flipped' : ''} h-[220px] sm:h-[260px] md:h-[280px]`}
       onClick={() => setFlipped(f => !f)}
       onKeyDown={e => e.key === 'Enter' && setFlipped(f => !f)}
       tabIndex={0}
@@ -36,14 +35,14 @@ export default function PostcardCard({
       <div className="postcard-inner">
         {/* Front */}
         <div
-          className="postcard-front rounded-sm shadow-[5px_5px_20px_rgba(44,26,14,0.2)] bg-white p-3 md:p-4"
+          className="postcard-front rounded-sm shadow-[5px_5px_20px_rgba(44,26,14,0.2)] bg-white p-2 sm:p-3 md:p-4"
         >
           <div
-            className={`w-full h-full rounded-sm flex items-end p-5 md:p-6 relative overflow-hidden ${imageSrc ? 'bg-cover' : ''}`}
-            style={{ 
+            className={`w-full h-full rounded-sm flex items-end p-4 sm:p-5 md:p-6 relative overflow-hidden ${imageSrc ? 'bg-cover' : ''}`}
+            style={{
               backgroundColor: '#FAF3E0',
               backgroundImage: imageSrc ? `url(${imageSrc})` : undefined,
-              backgroundPosition: imageSrc ? imagePosition : undefined
+              backgroundPosition: imageSrc ? imagePosition : undefined,
             }}
           >
             {/* Dark gradient overlay for text readability if image exists */}
@@ -66,7 +65,7 @@ export default function PostcardCard({
               </span>
             )}
             <h3
-              className={`font-display font-bold text-3xl relative z-10 ${placeholder ? 'opacity-50' : ''} ${imageSrc ? 'text-[#FAF3E0] drop-shadow-md' : 'text-drama'}`}
+              className={`font-display font-bold text-2xl sm:text-3xl relative z-10 ${placeholder ? 'opacity-50' : ''} ${imageSrc ? 'text-[#FAF3E0] drop-shadow-md' : 'text-drama'}`}
             >
               {place}
             </h3>
@@ -75,18 +74,18 @@ export default function PostcardCard({
 
         {/* Back */}
         <div
-          className="postcard-back rounded-sm shadow-[5px_5px_20px_rgba(44,26,14,0.2)] p-5 flex"
+          className="postcard-back rounded-sm shadow-[5px_5px_20px_rgba(44,26,14,0.2)] p-3 sm:p-5 flex"
           style={{ backgroundColor: '#FEFCF8' }}
         >
-          <div className="flex-1 pr-4 flex items-center">
-            <p className={`font-body text-text text-sm leading-relaxed ${placeholder ? 'opacity-50' : ''}`}>
+          <div className="flex-1 pr-3 sm:pr-4 flex items-center">
+            <p className={`font-body text-text text-xs sm:text-sm leading-relaxed ${placeholder ? 'opacity-50' : ''}`}>
               {note}
             </p>
           </div>
           <div className="w-px self-stretch bg-gold" />
-          <div className="flex-1 pl-4 flex flex-col items-center justify-center">
+          <div className="flex-1 pl-3 sm:pl-4 flex flex-col items-center justify-center">
             <div
-              className={`px-4 py-2 rounded-full border-2 -rotate-[8deg] ${stampColor}`}
+              className={`px-3 sm:px-4 py-1 sm:py-2 rounded-full border-2 -rotate-[8deg] ${stampColor}`}
             >
               <span className="font-serif text-xs uppercase tracking-widest">
                 {stamp}

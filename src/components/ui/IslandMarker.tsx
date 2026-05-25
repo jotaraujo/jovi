@@ -30,6 +30,8 @@ export default function IslandMarker({
   placeholder = false,
   index,
 }: IslandMarkerProps) {
+  // No mobile, o alinhamento sempre é à esquerda (sem inversão)
+  // No desktop (md+), alterna esquerda/direita via grid
   const cardContent = (
     <motion.div
       variants={fadeInUp}
@@ -37,59 +39,53 @@ export default function IslandMarker({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className={`p-6 rounded-sm relative ${placeholder ? 'opacity-60' : ''}`}
+      className={`p-4 sm:p-6 rounded-sm relative ${placeholder ? 'opacity-60' : ''}`}
       style={{
         backgroundColor: '#F2E8D5',
         border: placeholder ? '1px dashed #B8882A' : '1px solid #B8882A',
         boxShadow: '4px 4px 12px rgba(44,26,14,0.15)',
       }}
     >
-      <div
-        className={`flex items-center gap-2 mb-2 ${side === 'left' ? 'justify-end' : ''}`}
-      >
-        {side === 'right' && (
-          <span className="text-warm text-xl">{icon}</span>
-        )}
+      {/* Header: ícone + subtítulo + data — no mobile sempre à esquerda */}
+      <div className={`flex items-center gap-2 mb-2 md:${side === 'left' ? 'justify-end' : 'justify-start'}`}>
+        <span className="text-warm text-xl">{icon}</span>
         <span className="font-mono text-text text-xs">{subtitle}</span>
         <span className="font-mono text-text text-xs opacity-60">·</span>
         <span className="font-mono text-text text-xs opacity-60">{date}</span>
-        {side === 'left' && (
-          <span className="text-warm text-xl">{icon}</span>
-        )}
       </div>
-      <h3
-        className={`font-serif text-text text-xl mb-2 ${side === 'left' ? 'text-right' : ''}`}
-      >
+
+      {/* Título — no mobile sempre à esquerda, no desktop inverte se for 'left' */}
+      <h3 className={`font-serif text-text text-lg sm:text-xl mb-2 md:${side === 'left' ? 'text-right' : 'text-left'}`}>
         {title}
       </h3>
-      <p
-        className={`font-body text-text text-sm leading-relaxed ${side === 'left' ? 'text-right' : ''} ${placeholder ? 'italic opacity-70' : ''}`}
-      >
+
+      {/* Descrição — no mobile sempre à esquerda, no desktop inverte se for 'left' */}
+      <p className={`font-body text-text text-sm leading-relaxed md:${side === 'left' ? 'text-right' : 'text-left'} ${placeholder ? 'italic opacity-70' : ''}`}>
         {description}
       </p>
     </motion.div>
   )
 
   return (
-    <div className="relative flex mb-14 md:mb-16">
-      {/* Left slot */}
-      <div className={`w-full md:w-1/2 ${side === 'left' ? 'md:pr-12' : 'hidden md:block'}`}>
-        {side === 'left' && cardContent}
-      </div>
-
-      {/* Right slot */}
-      <div className={`w-full md:w-1/2 ${side === 'right' ? 'md:pl-12' : 'hidden md:block'}`}>
-        {side === 'right' && cardContent}
-      </div>
-
-      {/* Mobile: always show */}
-      <div className="md:hidden absolute inset-0 pl-8">
+    <div className="relative flex mb-10 md:mb-16">
+      {/* Mobile: card sempre à direita da linha da timeline */}
+      <div className="md:hidden w-full pl-8">
         {cardContent}
       </div>
 
-      {/* Timeline dot */}
+      {/* Desktop: slot esquerdo */}
+      <div className={`hidden md:block w-1/2 ${side === 'left' ? 'pr-12' : ''}`}>
+        {side === 'left' && cardContent}
+      </div>
+
+      {/* Desktop: slot direito */}
+      <div className={`hidden md:block w-1/2 ${side === 'right' ? 'pl-12' : ''}`}>
+        {side === 'right' && cardContent}
+      </div>
+
+      {/* Ponto da timeline */}
       <div
-        className={`absolute left-0 md:left-1/2 top-8 w-4 h-4 rounded-full -translate-x-1/2 border-2 z-10 ${
+        className={`absolute left-0 md:left-1/2 top-6 sm:top-8 w-3 h-3 sm:w-4 sm:h-4 rounded-full -translate-x-1/2 border-2 z-10 ${
           placeholder ? 'border-dashed' : ''
         }`}
         style={{

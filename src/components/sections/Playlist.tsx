@@ -50,7 +50,7 @@ export default function Playlist() {
       </div>
 
       {/* Content: vinyl + tracklist */}
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
+      <div className="max-w-5xl mx-auto flex flex-col items-center gap-8 sm:gap-12 md:flex-row md:items-start md:gap-16">
         {/* Vinyl */}
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }}

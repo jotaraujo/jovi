@@ -18,7 +18,7 @@ export default function Letter() {
         className="max-w-3xl mx-auto"
       >
         <div
-          className="relative p-10 md:p-12 rounded-sm"
+          className="relative p-5 sm:p-8 md:p-12 rounded-sm"
           style={{
             backgroundColor: '#FAF3E0',
             border: '3px double #B8882A',
@@ -55,7 +55,7 @@ export default function Letter() {
           </div>
 
           {/* Letter body */}
-          <div className="font-handwrite text-text leading-relaxed text-xl md:text-2xl space-y-4">
+          <div className="font-handwrite text-text leading-relaxed text-lg sm:text-xl md:text-2xl space-y-4">
             {paragraphs.map((p, i) => (
               <p key={i}>{p}</p>
             ))}

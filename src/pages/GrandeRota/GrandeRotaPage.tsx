@@ -14,7 +14,7 @@ export default function GrandeRotaPage() {
     <AudioProvider>
       <GrainOverlay />
       <Navbar />
-      <main className="pt-[68px]">
+      <main className="pt-[68px] overflow-x-hidden">
         <Hero />
         <Timeline />
         <Postcards />

@@ -138,7 +138,7 @@ export default function TheChoicePage() {
       {/* Outer ornate frame */}
       <div
         ref={cardRef}
-        className="relative z-10 w-full max-w-[580px]"
+        className="relative z-10 w-full max-w-[580px] px-2 sm:px-0"
         style={{
           filter: 'drop-shadow(0 20px 60px rgba(44, 26, 14, 0.65))',
           minHeight: '420px',
@@ -176,7 +176,7 @@ export default function TheChoicePage() {
               }}
             />
 
-            <div className="relative z-10 px-8 md:px-10 py-10 md:py-12 text-center">
+            <div className="relative z-10 px-4 sm:px-8 md:px-10 py-7 sm:py-10 md:py-12 text-center">
               {/* Tag */}
               <p className="font-mono text-gold uppercase tracking-[0.3em] text-sm mb-6">
                 // AVISO OFICIAL
@@ -197,17 +197,17 @@ export default function TheChoicePage() {
               {/* Buttons area — needs fixed height so "Não" can be absolute */}
               <div
                 ref={btnContainerRef}
-                className="relative mx-auto mb-8 overflow-hidden"
+                className="relative mx-auto mb-8 overflow-hidden w-full"
                 style={{ height: '120px', maxWidth: '460px' }}
               >
                 {/* Sim */}
                 <button
                   onClick={handleYes}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 px-8 py-3.5 bg-warm text-white
-                    font-serif text-lg rounded-sm transition-all duration-300
+                  className="absolute left-0 top-1/2 -translate-y-1/2 px-4 sm:px-8 py-3 sm:py-3.5 bg-warm text-white
+                    font-serif text-base sm:text-lg rounded-sm transition-all duration-300
                     hover:bg-[#a04715] shadow-[0_4px_12px_rgba(139,90,43,0.3)]
                     hover:shadow-[0_6px_18px_rgba(139,90,43,0.45)]"
-                  style={{ width: '200px' }}
+                  style={{ width: 'clamp(130px, 40vw, 200px)' }}
                 >
                   Sim, claro 🎮
                 </button>
@@ -217,10 +217,10 @@ export default function TheChoicePage() {
                   ref={noButtonRef}
                   aria-label="Não (este botão foge do cursor)"
                   aria-disabled="true"
-                  className="absolute px-8 py-3.5 border-2 border-text text-text bg-transparent
-                    font-serif text-lg rounded-sm"
+                  className="absolute px-4 sm:px-8 py-3 sm:py-3.5 border-2 border-text text-text bg-transparent
+                    font-serif text-base sm:text-lg rounded-sm"
                   style={{
-                    width: '200px',
+                    width: 'clamp(130px, 40vw, 200px)',
                     left: `${noPosition.x}px`,
                     top: `${noPosition.y}px`,
                     transition: 'left 0.15s ease-out, top 0.15s ease-out',

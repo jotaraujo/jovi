@@ -40,7 +40,7 @@ export default function WantedPosters() {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <motion.div variants={fadeInUp} className="w-full sm:w-auto">
+        <motion.div variants={fadeInUp} className="w-full flex justify-center">
           <WantedCard
             alias={wanted.him.alias}
             name={wanted.him.name}
@@ -50,7 +50,7 @@ export default function WantedPosters() {
           />
         </motion.div>
 
-        <motion.div variants={fadeInUp} className="w-full sm:w-auto">
+        <motion.div variants={fadeInUp} className="w-full flex justify-center">
           <WantedCard
             alias={wanted.her.alias}
             name={wanted.her.name}

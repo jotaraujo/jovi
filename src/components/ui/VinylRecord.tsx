@@ -4,13 +4,13 @@ interface VinylRecordProps {
 
 export default function VinylRecord({ isPlaying = false }: VinylRecordProps) {
   return (
-    <div 
-      className={`shrink-0 transition-all duration-700 ease-in-out ${isPlaying ? 'vinyl-spin' : ''}`} 
+    <div
+      className={`shrink-0 w-44 h-44 sm:w-52 sm:h-52 md:w-64 md:h-64 transition-all duration-700 ease-in-out ${isPlaying ? 'vinyl-spin' : ''}`}
       aria-hidden="true"
     >
       <svg
-        width="260"
-        height="260"
+        width="100%"
+        height="100%"
         viewBox="0 0 260 260"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

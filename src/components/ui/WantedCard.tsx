@@ -15,7 +15,7 @@ export default function WantedCard({
 }: WantedCardProps) {
   return (
     <div
-      className="w-full max-w-[400px] p-3 rounded-sm shadow-[8px_8px_24px_rgba(44,26,14,0.3)]"
+      className="w-full max-w-[340px] sm:max-w-[380px] md:max-w-[400px] p-2 sm:p-3 rounded-sm shadow-[8px_8px_24px_rgba(44,26,14,0.3)]"
       style={{
         background: 'linear-gradient(135deg, #8B6914 0%, #6B4E12 50%, #8B6914 100%)',
       }}
@@ -42,8 +42,8 @@ export default function WantedCard({
         <div
           className="mx-auto mb-4 flex items-center justify-center overflow-hidden"
           style={{
-            width: '180px',
-            height: '200px',
+            width: 'clamp(140px, 45vw, 180px)',
+            height: 'clamp(156px, 50vw, 200px)',
             border: '3px double #B8882A',
             backgroundColor: '#E8DCC8',
           }}

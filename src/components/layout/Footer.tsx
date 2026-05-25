@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="grain-section relative py-16 px-8 text-center"
+      className="grain-section relative py-12 sm:py-16 px-4 sm:px-8 text-center"
       style={{ backgroundColor: '#1A0A00' }}
     >
       <OrnamentDivider className="mb-8" />
