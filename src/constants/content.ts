@@ -35,7 +35,7 @@ export const timeline = [
     date: '09 de Maio de 2026',
     description: 'O dia que eu pude perceber que estava entrando de fato na sua vida. Onde eu jamais quero sair.',
     icon: '⚓',
-    placeholder: true,
+    placeholder: false,
   },
 ]
 
@@ -85,7 +85,7 @@ export const playlist = [
     track: "I Wanna Be Yours", 
     artist: 'Artic Monkeys', 
     featured: true, 
-    note: 'Pega a indireta aí (ou direta)"',
+    note: 'Pega a indireta aí (ou direta)',
     audioSrc: '/i-wanna-be-yours.mp3'
   },
   { 
@@ -98,19 +98,19 @@ export const playlist = [
   },
   { 
     id: 'track-4',
-    track: "Best Part", 
-    artist: 'Daniel Caesar', 
+    track: "Lonely Day", 
+    artist: 'System of a Down', 
     featured: true, 
-    note: 'Você é a melhor parte do meu dia.',
-    audioSrc: '/best-part.mp3'
+    note: 'Qualquer dia sem você é um dia solitário.',
+    audioSrc: '/lonely-day.mp3'
   },
   { 
     id: 'track-5',
-    track: "I'll Take Care of You", 
-    artist: 'Tyler The Creator', 
+    track: "Seize The Day", 
+    artist: 'Avenged Sevenfold', 
     featured: true, 
-    note: 'Estarei sempre com você',
-    audioSrc: '/ill-take-care-of-you.mp3'
+    note: 'Empty and cold without you here. Mas Você está aqui, e quero aproveitar cada momento.',
+    audioSrc: '/seize-the-day.mp3'
   },
 ]
 
